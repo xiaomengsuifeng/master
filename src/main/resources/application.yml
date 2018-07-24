@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/master?useUnicode=true&amp;characterEncoding=UTF-8
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    show-sql: true
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+  mybatis:
+  #加载配置文件
+   mapperLocations: classpath:mapper/*.xml
+   configLocation: classpath:mybatis/SqlMapConfig.xml
+   #扫描实体类
+   typeAliasesPackage: com.suifeng.master.entity
+  logging:
+    #日志配置文件
+    config: classpath:logback.xml
+

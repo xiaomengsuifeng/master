@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.suifeng.master.dao.SysMenuMapper">
+
+    <!--根据父菜单id查询子菜单-->
+    <select id="queryListByParentId" resultType="com.suifeng.master.entity.SysMenu">
+		select * from sys_menu where parent_id =#{id}
+	</select>
+
+    <!--查询所有菜单-->
+    <select id="selectAll" resultType="com.suifeng.master.entity.SysMenu">
+		select * from sys_menu
+	</select>
+	<!--查询所有菜单-->
+	<select id="queryMenuByType" resultType="com.suifeng.master.entity.SysMenu">
+		select * from sys_menu where type = #{type}
+	</select>
+
+</mapper>
